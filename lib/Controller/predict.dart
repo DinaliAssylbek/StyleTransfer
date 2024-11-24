@@ -8,10 +8,17 @@ class PredictedImage {
 
   PredictedImage({required this.update});
 
-  Future<void> predict(String artist) async {
+  Future<void> predict(String? artist) async {
     if (imageBytes == null) return;
 
-    final uri = Uri.parse("https://styletransferapi-production.up.railway.app/predict");
+    Uri uri;
+    if (artist == "Vincent Van Gogh") {
+      uri = Uri.parse("https://styletransferapi-production.up.railway.app/predictVanGogh");
+    } else if (artist == "Claude Monet") {
+      uri = Uri.parse("https://styletransferapi-production.up.railway.app/predictMonet");
+    } else {
+      uri = Uri.parse("https://styletransferapi-production.up.railway.app/predictMunch");
+    }
 
     // Convert the Uint8List to a file or directly use multipart for raw bytes
     var request = http.MultipartRequest('POST', uri);

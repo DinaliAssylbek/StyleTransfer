@@ -11,10 +11,10 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
+  String? _item = 'Vincent Van Gogh';
   @override
   Widget build(BuildContext context) {
-    final List<String> items = <String>['Vincent Van Gogh','Pablo Picasso','Claude Monet', 'Leonardo da Vinci'];
-    String item = 'Vincent Van Gogh';
+    final List<String> items = <String>['Vincent Van Gogh','Claude Monet', 'Edvard Munch'];
     return Container(
         padding: const EdgeInsets.all(16.0),
         decoration: const BoxDecoration(
@@ -51,9 +51,10 @@ class _MenuState extends State<Menu> {
                       hintStyle: TextStyle(color: Colors.grey[800]),
                       fillColor: Colors.white,
                   ),
-                  onChanged: (value) {
-                    item = value!;
-                    setState(() {});
+                  onChanged: (String? value) {
+                    setState(() {
+                      _item = value;
+                    });
                   },
                   items: items.map((String item) {
                     return DropdownMenuItem<String>(
@@ -119,7 +120,7 @@ class _MenuState extends State<Menu> {
                   )
                 ),
                 onPressed: () async {
-                  await widget.predictedImage.predict(item);
+                  await widget.predictedImage.predict(_item);
                   setState(() {
                     
                   });
