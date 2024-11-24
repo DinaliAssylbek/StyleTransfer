@@ -12,7 +12,7 @@
     }
   },
   "hosting": {
-    "public": "art-style-transfer",
+    "public": "build/web",
     "ignore": [
       "firebase.json",
       "**/.*",
