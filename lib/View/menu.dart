@@ -31,8 +31,7 @@ class _MenuState extends State<Menu> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Art Style Transfer Project", style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
-                    Text("Dinali Assylbek", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-                    Text("CS 4640", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                    Text("Dinali Assylbek", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold))
                   ],
                 ),
             ),
